@@ -39,5 +39,8 @@ body {
 
 	color:white
 }
-
+input::placeholder,
+textarea::placeholder {
+	color:rgb(168, 168, 168)
+}
 </style>
