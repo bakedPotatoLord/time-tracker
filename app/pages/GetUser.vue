@@ -1,12 +1,8 @@
 <script setup lang="ts">
 const route = useRoute()
-
 const name = decodeURIComponent(route.query.name as string) 
 
-if(!name) {
-    useRouter().push('/')
-}
-
+if(!name) useRouter().push('/')
 
 const { data: user } = useAsyncData(
 	'userInfo',
@@ -28,7 +24,7 @@ const { data: user } = useAsyncData(
 	<div v-else class="container">
 		<h1>{{ user.name }}</h1>
 		<h4>{{ user.title }}</h4>
-    <textarea name="" id="" rows="5" cols="30" v-model="user.bio"></textarea>
+    <p>{{user.bio}}</p>
   </div>
   <TimesDisplay
 		:times="user ? user.roomTimes : []"
@@ -37,9 +33,9 @@ const { data: user } = useAsyncData(
 
 <style lang="scss">
 textarea {
-		background-color: #c3a6df;
-		border: 2px solid blueviolet;
-		border-radius: 0.3rem;
-    font-family: 'Fira sans';
-	}
+	background-color: #c3a6df;
+	border: 2px solid blueviolet;
+	border-radius: 0.3rem;
+	font-family: 'Fira sans';
+}
 </style>
