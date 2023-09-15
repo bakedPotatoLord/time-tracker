@@ -3,7 +3,7 @@
 		<div class="logo">
 			<router-link to="/">
 				<img
-					src="../assets/teamLogo.png"
+					src="~/assets/wolfhead.png"
 					alt="team logo"
 					id="logo"
 				/>
@@ -46,6 +46,11 @@ function logOut(){
 	background-color: #2e2e2e;
 	justify-content: space-between;
 	align-items: center;
+	#logo {
+		align-self: left;
+		width: 100px;
+		margin-top:5px
+	}
 	.navbar {
 		display: flex;
 		flex-direction: row;
@@ -69,9 +74,6 @@ function logOut(){
 	}
 }
 
-#logo {
-	align-self: left;
-	width: 50px;
-}
+
 
 </style>
