@@ -141,7 +141,7 @@ function clearInputs() {
 		Change Pin
 	</button>
 
-	<h3>Top Times</h3>
+	
 	<TimesDisplay
 		:times="userInfo ? userInfo.roomTimes : []"
 	/>
@@ -175,6 +175,7 @@ function clearInputs() {
 	align-items: center;
 	flex-direction: row;
 	border-radius: 0.5rem;
+	gap: 0.3rem;
 	label {
 		margin-left: 0;
 	}
@@ -198,10 +199,6 @@ function clearInputs() {
 	textarea {
 		width: 20rem;
 		height: 5rem;
-	}
-	* {
-		margin-left: 0.2rem;
-		margin-right: 0.2rem;
 	}
 }
 button {

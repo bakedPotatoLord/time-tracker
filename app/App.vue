@@ -37,7 +37,7 @@ body {
 	background: linear-gradient(90deg,#66289c,#201d38);
 	font-family: 'Montserrat', sans-serif;
 
-	color:white
+	color:rgb(226, 226, 226)
 }
 input::placeholder,
 textarea::placeholder {
