@@ -2,7 +2,8 @@
 import Cookies from 'js-cookie'
 import PinSelector from '../components/PinSelector.vue'
 
-if (Cookies.get('id') == undefined) useRouter().push('/login')
+if (Cookies.get('id') == undefined)
+	useRouter().push('/login')
 
 const newName = ref('')
 const newTitle = ref('')
@@ -136,11 +137,9 @@ function clearInputs() {
 			></textarea>
 		</form>
 	</div>
-	<div class="changeSomething">
-		<button @click="showLightBox = true" id="changePin">
-			Change Pin
-		</button>
-	</div>
+	<button @click="showLightBox = true" id="changePin">
+		Change Pin
+	</button>
 
 	<h3>Top Times</h3>
 	<TimesDisplay
@@ -168,9 +167,14 @@ function clearInputs() {
 	}
 }
 .changeSomething {
+	background-color: #421291;
+	width: min-content;
+	padding: 0.3rem;
 	margin-top: 1rem;
 	display: flex;
+	align-items: center;
 	flex-direction: row;
+	border-radius: 0.5rem;
 	label {
 		margin-left: 0;
 	}
@@ -180,18 +184,20 @@ function clearInputs() {
 		}
 		button {
 			margin-left: 0;
+			padding: 0.5rem;
 		}
 		display: flex;
 		flex-direction: column;
 	}
 	input,
 	textarea {
-		background-color: #c3a6df;
-		border: 2px solid blueviolet;
+		background-color: #421291;
 		border-radius: 0.3rem;
+		border:2px solid rgb(116, 53, 158) ;
 	}
-	input::placeholder {
-		color: rgb(85, 85, 85);
+	textarea {
+		width: 20rem;
+		height: 5rem;
 	}
 	* {
 		margin-left: 0.2rem;
@@ -200,17 +206,18 @@ function clearInputs() {
 }
 button {
 	font-weight: 600;
-	background-color: #a56dda;
+	background-color: #2e2e2e;
 	border: 0px;
 	border-radius: 0.5rem;
 	background-image: linear-gradient(
 		to top,
 		blueviolet 50%,
-		#a56dda 50%
+		#2e2e2e 50%
 	); /* Set gradient to new color */
 	background-size: 100% 200%; /* Set size of gradient */
 	transition: background-position 0.3s; /* Set transition duration */
-	padding: 0.2rem;
+
+	color: white;
 }
 button:hover {
 	background-position: 0 -100%; /* Move gradient upwards */
