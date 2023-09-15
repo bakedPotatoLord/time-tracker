@@ -18,8 +18,8 @@
 					<div class="data">
 						<h3>{{ v.name }}</h3>
 						<p>{{ v.title }}</p>
-						<p>total time: {{ v.sumTimeString }}</p>
-						<p>total seconds: {{Math.floor(v.sumTime/1000) }}</p>
+						<p>{{ v.sumTimeString }}</p>
+						<p>{{Math.floor(v.sumTime/1000) }} Total Seconds</p>
 					</div>
 				</router-link>
 			</div>
