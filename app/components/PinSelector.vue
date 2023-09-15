@@ -1,32 +1,3 @@
-<template>
-	<div class="lightbox" v-if="showLightbox">
-		<div class="lightbox-content">
-			<h2>Pin Change</h2>
-			<form class="form" @submit.prevent="handleSubmit">
-				<label for="currPin">Current pin</label>
-				<input
-					type="number"
-					id="currPin"
-					v-model.number="currentPin"
-					required
-				/>
-				<label for="newpin">New Pin</label>
-				<input
-					type="password"
-					id="newpin"
-					v-model.number="newPin"
-					name="pin"
-					required
-				/>
-				<div class="escapeOptions">
-					<button type="submit">Submit</button>
-					<button @click.prevent="handleCancel">Cancel</button>
-				</div>
-			</form>
-		</div>
-	</div>
-</template>
-
 <script setup lang="ts">
 interface PinData {
 	currPin: number
@@ -62,6 +33,35 @@ function clearFields() {
 }
 </script>
 
+<template>
+	<div class="lightbox" v-if="showLightbox">
+		<div class="lightbox-content">
+			<h2>Pin Change</h2>
+			<form class="form" @submit.prevent="handleSubmit">
+				<label for="currPin">Current pin</label>
+				<input
+					type="number"
+					id="currPin"
+					v-model.number="currentPin"
+					required
+				/>
+				<label for="newpin">New Pin</label>
+				<input
+					type="password"
+					id="newpin"
+					v-model.number="newPin"
+					name="pin"
+					required
+				/>
+				<div class="escapeOptions">
+					<button type="submit">Submit</button>
+					<button @click.prevent="handleCancel">Cancel</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</template>
+
 <style scoped lang="scss">
 .lightbox {
 	position: fixed;
@@ -77,10 +77,26 @@ function clearFields() {
 		display: block;
 		margin-bottom: 10px;
 	}
-}
-.lightbox-content {
-	background-color: white;
-	padding: 20px;
+	.lightbox-content {
+		background-color: #2e2e2e;
+		padding: 20px;
+		form{
+			input,
+			button{
+				background-color:rgb(92, 37, 180);
+				border:2px solid #2e2e2e;
+				border-radius:0.5rem;
+				padding-left: 0.5rem;
+				padding-right: 0.5rem;
+				margin-bottom: 0.5rem;
+				color:white;
+			}
+			button{
+				font-family: 'Montserrat', sans-serif;
+				padding: 0.4rem;
+			}
+		}
+	}
 }
 .escapeOptions {
 	display: flex;
