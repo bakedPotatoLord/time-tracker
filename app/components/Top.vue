@@ -43,7 +43,7 @@ function logOut(){
 .container {
 	display: flex;
 	flex-direction: row;
-	background-color: rgb(165, 109, 218);
+	background-color: #2e2e2e;
 	justify-content: space-between;
 	align-items: center;
 	.navbar {

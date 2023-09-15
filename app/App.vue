@@ -1,6 +1,10 @@
 <template>
 	<div class="container">
-		<Top />
+		<div class="topStuff">
+
+			<Top />
+			<TopDivider/>
+		</div>
 		<div class="router-container">
 			<NuxtPage />
 		</div>
@@ -8,7 +12,14 @@
 </template>
 
 <style scoped>
+.topStuff {
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+}
 .router-container {
+	margin-top: 120px;
 	margin-left: 1rem;
 	margin-right: 1rem;
 }
