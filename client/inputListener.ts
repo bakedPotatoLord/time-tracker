@@ -27,6 +27,10 @@ export async function init() {
     };
     if (rpipin == 7) {
       //clock in
+      if(clockedIn.has(lastPin) && !isvalid([clockedIn.get(lastPin),Date.now()])){
+        clockedIn.delete(lastPin)
+        console.log("forgot to log out last time")
+      }
       if (!clockedIn.has(lastPin)) {
 				Lcd.sayForSeconds("logging in...",5,"")
 				fetch(Global.prodUrl+"/api/login", {
@@ -51,6 +55,7 @@ export async function init() {
 				})
       }else{
         console.log('you were already clocked in')
+        
 				Lcd.sayForSeconds("spam isn't cool",2,"")
 			}
     } else if (rpipin == 11) {
@@ -85,6 +90,7 @@ export async function init() {
 						console.log(err)
 					})
 				}else{
+          clockedIn.delete(lastPin)
 					console.log("invalid time")
 				}
       }else{
